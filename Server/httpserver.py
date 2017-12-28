@@ -1,8 +1,11 @@
+#! /usr/bin/Python
+
 import socketserver
 import httphandler
+import config
 
 def main():
-    PORT = 3000
+    PORT = config.PORT
     Handler = httphandler.HexHandler
     try:
         server = socketserver.TCPServer(('', PORT), Handler)
