@@ -17,6 +17,10 @@ class HexHandler(http.server.SimpleHTTPRequestHandler):
         content_len = int(self.headers['content-length'], 0)
         post_value = self.rfile.read(content_len)
         post_body = json.loads(post_value.decode("utf-8"))
+        if post_body['MessageType'] = 'Auction'
+            f = open('auction.txt', 'a')
+            f.write("%s\n"%post_body)
+            f.close()
         #  Used for testing to output directly to a text file
         f = open('apioutput.txt', 'a')
         f.write("%s\n"%post_body)
