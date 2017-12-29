@@ -101,4 +101,4 @@ ENV/
 .mypy_cache/
 
 #log
-/server/log/
+apioutput.txt

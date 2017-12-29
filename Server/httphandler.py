@@ -18,6 +18,6 @@ class HexHandler(http.server.SimpleHTTPRequestHandler):
         post_value = self.rfile.read(content_len)
         post_body = json.loads(post_value.decode("utf-8"))
         #  Used for testing to output directly to a text file
-        f = open('log\\apioutput.txt', 'a')
+        f = open('apioutput.txt', 'a')
         f.write("%s\n"%post_body)
         f.close()
