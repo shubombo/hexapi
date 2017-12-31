@@ -1,6 +1,9 @@
 FROM python:3.6-alpine
 RUN mkdir /app
 COPY . /app
+COPY boot.sh /app
+RUN pip install -r /app/requirements.txt
 WORKDIR app
 EXPOSE 80
-CMD ["python", "listener.py"]
+RUN chmod +x ./boot.sh
+ENTRYPOINT ["sh","./boot.sh"]
