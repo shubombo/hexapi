@@ -25,6 +25,9 @@ def return_file(path):
     if os.path.isfile(os.path.join('log', path+'.txt')):
         return send_from_directory('log', path+'.txt')
     abort(404)
+@app.route("/about", methods = ['GET'])
+def about():
+    return "Hello World", 200
 
 if __name__ == "__main__":
     app.run()
