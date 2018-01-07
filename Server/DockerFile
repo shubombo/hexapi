@@ -5,5 +5,6 @@ COPY boot.sh /app
 RUN pip install -r /app/requirements.txt
 WORKDIR app
 EXPOSE 5000
+ENV FLASK_CONFIG 'production'
 RUN chmod +x ./boot.sh
 ENTRYPOINT ["sh","./boot.sh"]
