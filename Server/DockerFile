@@ -2,9 +2,11 @@ FROM python:3.6-alpine
 RUN mkdir /app
 COPY . /app
 COPY boot.sh /app
+RUN apk update && \
+    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add postgresql-dev
 RUN pip install -r /app/requirements.txt
 WORKDIR app
 EXPOSE 5000
 ENV FLASK_CONFIG 'production'
 RUN chmod +x ./boot.sh
-ENTRYPOINT ["sh","./boot.sh"]

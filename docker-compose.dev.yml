@@ -1,0 +1,29 @@
+version: '2'
+services:
+  web:
+    restart: always
+    build: ./server
+    expose:
+      - "5000"
+    volumes:
+        - /usr/src/app
+    env_file: .env
+    links:
+      - db
+    command: sh ./boot.sh
+  db:
+     restart: always
+     build: ./database
+     expose:
+      - "5432"
+  nginx:
+    restart: always
+    build: ./nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /www/static
+    volumes_from:
+      - web
+    links:
+      - web
