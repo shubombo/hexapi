@@ -2,7 +2,7 @@ version: '2'
 services:
   web:
     restart: always
-    build: ./server
+    build: ./Server
     ports:
       - "5000:5000"
     volumes:
@@ -13,12 +13,12 @@ services:
     command: sh ./boot.sh
   db:
     restart: always
-    build: ./database
+    build: ./Database
     ports:
       - "5432:5432"
   nginx:
     restart: always
-    build: ./nginx
+    build: ./Nginx
     ports:
       - "80:80"
     volumes:
