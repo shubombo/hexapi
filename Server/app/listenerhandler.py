@@ -14,9 +14,9 @@ def process_post(requestJson):
         #  Check that MessageType Value Exists, If not pass default
         try:
             output = {
-                'Auction' : 'log\\auction.txt'
-            ,   'Tournament' : 'log\\tournament.txt'
-            ,   'Output' : 'log\\apioutput.txt'
+                'Auction' : 'log//auction.txt'
+            ,   'Tournament' : 'log//tournament.txt'
+            ,   'Output' : 'log//apioutput.txt'
             }[messageType]
         except KeyError as e:
             output = 'log\\apioutput.txt'
