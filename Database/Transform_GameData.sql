@@ -15,39 +15,39 @@ INSERT INTO public.temp("Uuid", "Atk", "SocketCount", "Artist", "Name", "Faction
 		data::jsonb->'type',
 		data::jsonb->>'sub_type',
     	data::jsonb->'equipment_uuids',
-		case
-    		when data::jsonb->'threshold'->0->'shard'='"Wild"' then data::jsonb->'threshold'->0->'quantity'
-        	when data::jsonb->'threshold'->1->'shard'='"Wild"' then data::jsonb->'threshold'->1->'quantity'
-        	when data::jsonb->'threshold'->2->'shard'='"Wild"' then data::jsonb->'threshold'->2->'quantity'
-        	when data::jsonb->'threshold'->3->'shard'='"Wild"' then data::jsonb->'threshold'->3->'quantity'
-        	when data::jsonb->'threshold'->4->'shard'='"Wild"' then data::jsonb->'threshold'->4->'quantity'
-        else null end as WildThresholdCount,
-    	case
-    		when data::jsonb->'threshold'->0->'shard'='"Blood"' then data::jsonb->'threshold'->0->'quantity'
-        	when data::jsonb->'threshold'->1->'shard'='"Blood"' then data::jsonb->'threshold'->1->'quantity'
-        	when data::jsonb->'threshold'->2->'shard'='"Blood"' then data::jsonb->'threshold'->2->'quantity'
-        	when data::jsonb->'threshold'->3->'shard'='"Blood"' then data::jsonb->'threshold'->3->'quantity'
-        	when data::jsonb->'threshold'->4->'shard'='"Blood"' then data::jsonb->'threshold'->4->'quantity'
-        else null end as BloodThresholdCount,
-    	case
-    		when data::jsonb->'threshold'->0->'shard'='"Ruby"' then data::jsonb->'threshold'->0->'quantity'
-        	when data::jsonb->'threshold'->1->'shard'='"Ruby"' then data::jsonb->'threshold'->1->'quantity'
-        	when data::jsonb->'threshold'->2->'shard'='"Ruby"' then data::jsonb->'threshold'->2->'quantity'
-        	when data::jsonb->'threshold'->3->'shard'='"Ruby"' then data::jsonb->'threshold'->3->'quantity'
-        	when data::jsonb->'threshold'->4->'shard'='"Ruby"' then data::jsonb->'threshold'->4->'quantity'
-        else null end as RubyThresholdCount,
-    	case
-    		when data::jsonb->'threshold'->0->'shard'='"Sapphire"' then data::jsonb->'threshold'->0->'quantity'
-        	when data::jsonb->'threshold'->1->'shard'='"Sapphire"' then data::jsonb->'threshold'->1->'quantity'
-        	when data::jsonb->'threshold'->2->'shard'='"Sapphire"' then data::jsonb->'threshold'->2->'quantity'
-        	when data::jsonb->'threshold'->3->'shard'='"Sapphire"' then data::jsonb->'threshold'->3->'quantity'
-        	when data::jsonb->'threshold'->4->'shard'='"Sapphire"' then data::jsonb->'threshold'->4->'quantity'
-        else null end as SapphireThresholdCount,
-    case
-    	when data::jsonb->'threshold'->0->'shard'='"Diamond"' then data::jsonb->'threshold'->0->'quantity'
-        when data::jsonb->'threshold'->1->'shard'='"Diamond"' then data::jsonb->'threshold'->1->'quantity'
-        when data::jsonb->'threshold'->2->'shard'='"Diamond"' then data::jsonb->'threshold'->2->'quantity'
-        when data::jsonb->'threshold'->3->'shard'='"Diamond"' then data::jsonb->'threshold'->3->'quantity'
-        when data::jsonb->'threshold'->4->'shard'='"Diamond"' then data::jsonb->'threshold'->4->'quantity'
-        else null end as DiamondThresholdCount
+		cast(case
+    		when data::jsonb->'threshold'->0->'shard'='"Wild"' then data::jsonb->'threshold'->0->>'quantity'
+        	when data::jsonb->'threshold'->1->'shard'='"Wild"' then data::jsonb->'threshold'->1->>'quantity'
+        	when data::jsonb->'threshold'->2->'shard'='"Wild"' then data::jsonb->'threshold'->2->>'quantity'
+        	when data::jsonb->'threshold'->3->'shard'='"Wild"' then data::jsonb->'threshold'->3->>'quantity'
+        	when data::jsonb->'threshold'->4->'shard'='"Wild"' then data::jsonb->'threshold'->4->>'quantity'
+        else null end as int),
+    	cast(case
+    		when data::jsonb->'threshold'->0->'shard'='"Blood"' then data::jsonb->'threshold'->0->>'quantity'
+        	when data::jsonb->'threshold'->1->'shard'='"Blood"' then data::jsonb->'threshold'->1->>'quantity'
+        	when data::jsonb->'threshold'->2->'shard'='"Blood"' then data::jsonb->'threshold'->2->>'quantity'
+        	when data::jsonb->'threshold'->3->'shard'='"Blood"' then data::jsonb->'threshold'->3->>'quantity'
+        	when data::jsonb->'threshold'->4->'shard'='"Blood"' then data::jsonb->'threshold'->4->>'quantity'
+        else null end as int),
+    	cast(case
+    		when data::jsonb->'threshold'->0->'shard'='"Ruby"' then data::jsonb->'threshold'->0->>'quantity'
+        	when data::jsonb->'threshold'->1->'shard'='"Ruby"' then data::jsonb->'threshold'->1->>'quantity'
+        	when data::jsonb->'threshold'->2->'shard'='"Ruby"' then data::jsonb->'threshold'->2->>'quantity'
+        	when data::jsonb->'threshold'->3->'shard'='"Ruby"' then data::jsonb->'threshold'->3->>'quantity'
+        	when data::jsonb->'threshold'->4->'shard'='"Ruby"' then data::jsonb->'threshold'->4->>'quantity'
+        else null end as int),
+    	cast(case
+    		when data::jsonb->'threshold'->0->'shard'='"Sapphire"' then data::jsonb->'threshold'->0->>'quantity'
+        	when data::jsonb->'threshold'->1->'shard'='"Sapphire"' then data::jsonb->'threshold'->1->>'quantity'
+        	when data::jsonb->'threshold'->2->'shard'='"Sapphire"' then data::jsonb->'threshold'->2->>'quantity'
+        	when data::jsonb->'threshold'->3->'shard'='"Sapphire"' then data::jsonb->'threshold'->3->>'quantity'
+        	when data::jsonb->'threshold'->4->'shard'='"Sapphire"' then data::jsonb->'threshold'->4->>'quantity'
+        else null end as int),
+    cast(case
+    	when data::jsonb->'threshold'->0->'shard'='"Diamond"' then data::jsonb->'threshold'->0->>'quantity'
+        when data::jsonb->'threshold'->1->'shard'='"Diamond"' then data::jsonb->'threshold'->1->>'quantity'
+        when data::jsonb->'threshold'->2->'shard'='"Diamond"' then data::jsonb->'threshold'->2->>'quantity'
+        when data::jsonb->'threshold'->3->'shard'='"Diamond"' then data::jsonb->'threshold'->3->>'quantity'
+        when data::jsonb->'threshold'->4->'shard'='"Diamond"' then data::jsonb->'threshold'->4->>'quantity'
+        else null end as int)
 	from public.objects;
