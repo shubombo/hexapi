@@ -1,5 +1,6 @@
 FROM python:3.6-alpine
 RUN mkdir /app
+RUN mkdir /app/log
 COPY . /app
 COPY boot.sh /app
 RUN apk update && \

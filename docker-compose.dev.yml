@@ -2,9 +2,9 @@ version: '2'
 services:
   web:
     restart: always
-    build: ./server
-    expose:
-      - "5000"
+    build: ./Server
+    ports:
+      - "5000:5000"
     volumes:
         - /usr/src/app
     env_file: .env
@@ -12,13 +12,13 @@ services:
       - db
     command: sh ./boot.sh
   db:
-     restart: always
-     build: ./database
-     expose:
-      - "5432"
+    restart: always
+    build: ./Database
+    ports:
+      - "5432:5432"
   nginx:
     restart: always
-    build: ./nginx
+    build: ./Nginx
     ports:
       - "80:80"
     volumes:

@@ -13,6 +13,6 @@ def create_app(config_name=None):
 
     # Register API routes
     from .listener import listener as listener_blueprint
-    app.register_blueprint(listener_blueprint, url_prefix='/', template_folder = "templates")
+    app.register_blueprint(listener_blueprint, template_folder = "templates")
 
     return app
