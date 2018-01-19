@@ -27,3 +27,12 @@ services:
       - web
     links:
       - web
+  pgadmin:
+    links:
+      - db
+    image: fenglc/pgadmin4
+    volumes:
+       - /data/pgadmin:/root/.pgadmin
+    ports:
+      - "5050:5050"
+    restart: unless-stopped
