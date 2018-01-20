@@ -75,28 +75,27 @@ ALTER TABLE "AuctionMessages" OWNER TO postgres;
 --
 
 CREATE TABLE "GameData" (
-    "SetNumber" character varying NOT NULL,
-    "Name" character varying NOT NULL,
-    "Rarity" character varying NOT NULL,
-    "Color" character varying NOT NULL,
-    "SubType" character varying NOT NULL,
-    "Faction" character varying NOT NULL,
-    "SocketCount" character varying NOT NULL,
-    "Threshold" character varying NOT NULL,
-    "ATK" character varying NOT NULL,
-    "Health" character varying NOT NULL,
-    "Uuid" character varying NOT NULL,
-    "Artist" character varying NOT NULL,
-    "GameDataId" bigint NOT NULL,
-    "Text" character varying NOT NULL,
-    "Cost" character varying,
-    "Type" jsonb NOT NULL,
-    "EquipmentUuids" jsonb NOT NULL,
-    "WildThresholdCount" character varying,
-    "BloodThresholdCount" character varying,
-    "RubyThresholdCount" character varying,
-    "SapphireThresholdCount" character varying,
-    "DiamondThresholdCount" character varying
+  "GameDataId" bigint NOT NULL,
+  "Uuid" uuid NOT NULL,
+  "Atk" integer,
+  "SocketCount" integer NOT NULL,
+  "Artist" character varying,
+  "Name" character varying NOT NULL,
+  "Faction" character varying,
+  "Color" character varying,
+  "Rarity" character varying,
+  "SetNumber" character varying,
+  "Cost" integer,
+  "Health" integer,
+  "Text" character varying,
+  "SubType" text,
+  "Type" jsonb,
+  "EquipmentUuids" jsonb,
+  "WildThresholdCount" integer,
+  "BloodThresholdCount" integer,
+  "RubyThresholdCount" integer,
+  "SapphireThresholdCount" integer,
+  "DiamondThresholdCount" integer
 );
 
 
@@ -180,4 +179,3 @@ ALTER TABLE ONLY "AuctionMessages"
 --
 -- PostgreSQL database dump complete
 --
-
