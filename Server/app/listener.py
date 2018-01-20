@@ -11,7 +11,7 @@ def root():
     if request.method == 'POST':
         requestJson = request.get_json()
         try:
-            process_post(requestJson[0])
+            process_post(requestJson)
         except Exception as e:
             return ('Error Handling Post Request')
         return 'Request Processed Successfully', 200

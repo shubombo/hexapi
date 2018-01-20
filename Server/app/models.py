@@ -45,7 +45,7 @@ class AuctionEvent(db.Model):
     AuctionId = db.Column(BIGINT, nullable=False)
     Item = db.Column(UUID, nullable=False)
     GoldBuyout = db.Column(BIGINT, nullable=False)
-    Actor = db.Column(BIGINT, nullable=False)
+    Actor = db.Column(TEXT, nullable=False)
     PlatBuyout = db.Column(BIGINT, nullable=False)
     Action = db.Column(TEXT, nullable=False)
     GoldBid = db.Column(BIGINT, nullable=False)
