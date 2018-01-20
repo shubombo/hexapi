@@ -600,6 +600,7 @@ ALTER TABLE ONLY "AuctionEvents"
 -- Name: AuctionMessages AuctionMessages_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
+
 ALTER TABLE ONLY "AuctionMessages"
     ADD CONSTRAINT "AuctionMessages_pkey" PRIMARY KEY ("MessageId");
 

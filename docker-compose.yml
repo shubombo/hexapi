@@ -5,6 +5,7 @@ services:
     build: ./Server
     expose:
       - "5000"
+
     volumes:
         - /usr/src/app
     links:
