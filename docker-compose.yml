@@ -3,19 +3,19 @@ services:
   web:
     restart: always
     build: ./Server
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
+
     volumes:
         - /usr/src/app
-    env_file: .env
     links:
       - db
     command: sh ./boot.sh
   db:
-    restart: always
-    build: ./Database
-    ports:
-      - "5432:5432"
+     restart: always
+     build: ./Database
+     expose:
+      - "5432"
   nginx:
     restart: always
     build: ./Nginx
