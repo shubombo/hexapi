@@ -8,10 +8,10 @@ module.exports = {
 
     environment: 'development',
 
-    dbname: 'auction',
+    dbname: 'postgres',
     dbuser: 'postgres',
-    dbpass: 'Password',
-    dbhost: 'db',
+    dbpass: 'changeme',
+    dbhost: 'localhost',
     dbport: 5432,
 
 };
