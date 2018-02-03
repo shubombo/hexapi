@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from app import create_app, db
 from app.models import AuctionEvent, AuctionMessage, TournamentMessage, TournamentGame, TournamentMatch, TournamentDeck
-from flask_migrate import Migrate
+from flask_migrate import Migrate, upgrade
 
 
 
