@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-PORT = 80
-=======
 import os
 from dotenv import load_dotenv
 
