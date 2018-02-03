@@ -103,3 +103,5 @@ ENV/
 #log
 <<<<<<< HEAD
 apioutput.txt
+=======
+/server/app/log
