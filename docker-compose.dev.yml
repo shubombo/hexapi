@@ -1,0 +1,37 @@
+version: '2'
+services:
+  web:
+    restart: always
+    build: ./Server
+    ports:
+      - "5000:5000"
+    volumes:
+        - /usr/src/app
+    links:
+      - db
+    command: sh ./boot.sh
+  db:
+    restart: always
+    build: ./Database
+    ports:
+      - "5432:5432"
+  nginx:
+    restart: always
+    build: ./Nginx
+    ports:
+      - "80:80"
+    volumes:
+      - /www/static
+    volumes_from:
+      - web
+    links:
+      - web
+  pgadmin:
+    links:
+      - db
+    image: fenglc/pgadmin4
+    volumes:
+       - /data/pgadmin:/root/.pgadmin
+    ports:
+      - "5050:5050"
+    restart: unless-stopped
