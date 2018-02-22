@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-PORT = 80
-=======
 import os
 from dotenv import load_dotenv
 
@@ -54,4 +51,3 @@ config = {
     'production': ProductionConfig,
     'testing': TestingConfig
 }
->>>>>>> flaskdev

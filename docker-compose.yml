@@ -36,3 +36,9 @@ services:
     ports:
       - "5050:5050"
     restart: unless-stopped
+  metabase:
+    links:
+      - db
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
